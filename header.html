@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        a{
+            font-size: 20px;
+        }
+        body{
+            width: 1920px;
+            height: 1080px;
+            background: linear-gradient(45deg , grey 0%, grey 80%, white 80%, white 80.4%,orange 80.4%, orange 100%);
+        }
+        div.nav{
+            top: 0;
+            width: 100%;
+            position: fixed;
+            height: 150px;
+            background: inherit;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(100px);
+            z-index: 1;
+        }
+        img.logo{
+            height: 150px;
+            position: fixed;
+            z-index: 0;
+        }
+        a.btn{
+            width: auto;
+            font-size: 20px;
+            height: 50px;
+            margin-top: auto;   
+            margin-bottom: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <img src="./img/world-of-warships-logo-BDF915FC03-seeklogo.com.png" alt="" class="logo">
+        <a href="./home.html" class="btn btn-primary" style="margin-left: 250px;">Home</a>
+        <a href="./business.html" class="btn btn-primary" style="margin-left: 50px;">Business</a>
+        <a href="./news.html" class="btn btn-primary" style="margin-left: 50px;">News</a>
+        <a href="./tickets.html" class="btn btn-primary" style="margin-left: 50px;">Tickets</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <style>
+        body {
+            display: flex;
+        }
+
+        div.row {
+            margin: auto;
+        }
+
+        div.card-header {
+            border-left: 5px solid red;
+            margin: auto;
+            background: rgba(0, 0, 0, 0);
+        }
+
+        div.row {
+            width: 1500px;
+            margin: auto;
+        }
+
+        .displayflex{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: nowrap !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav"></div>
+    <div class="row no-gutters displayflex">
+        <div class="col-md-5">
+            <div class="card bg-dark text-white">
+                <img src="./img/0af5d0dc-ae27-11ee-a0d7-b49691e6ead0_1200x.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <h1 class="card-title">搶先體驗美國航空母艦</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-20">
+            <div class="card-body">
+                <h5 class="card-title">13.0 版本更新見證了搶先體驗美國航空母艦分支的初始：來認識 Independence、Yorktown 及 Essex！</h5>
+                <p class="card-text">為慶祝此活動，我們在遊戲中為 VIII YORKTOWN和 <a href="#" id="ESSEX">X ESSEX</a> 新增了永久迷彩，以及紀念旗幟。.</p>
+                <p class="card-text">
+                    13.0 版本更新帶來了有 20 個等級的活動通行證，您可以透過完成一系列的每日和每週任務來推進等級。第一個進度條最珍貴的獎勵是
+                    <a href="#" id="INDEPENDENCE">VI INDEPENDENCE</a>
+                    ，其他獎勵包括「美國航空母艦」紀念旗幟、
+                    VIII BALTIMORE
+                    的「自由」永久迷彩、「旗幟」加值貨櫃、「自由之翼」貨櫃，以及其他珍貴獎勵。完成首 20 個等級之後，在達成額外等級時可獲得「自由之翼」貨櫃作為獎勵。
+                    您能以達布隆解鎖第二個進度條。如同第一個進度條，此進度條也是由 20 個等級組成，不過它較為特別的地方在於其提供的獎勵，包括
+                    <a href="#" id="YORKTOWN">VIII YORKTOWN</a>
+                    、
+                    VIII YORKTOWN
+                    的加成包、附帶獨有配音和 6 個技能點數的指揮官 Statue of Liberty、
+                    X DES MOINES
+                    的「自由」永久迷彩，以及其他珍貴獎勵。完成首 20 個等級之後，達成額外等級的獎勵為美國代幣。
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./jquery.js"></script>
+<script>
+    $(".nav").load("header.html")
+    $("#INDEPENDENCE").click(function () {
+        localStorage.setItem("INDEPENDENCE","true")
+        location.href = "business.html"
+    })
+    $("#YORKTOWN").click(function () {
+        localStorage.setItem("YORKTOWN" , "true")
+        location.href = "business.html"
+    })
+    $("#ESSEX").click(function () {
+        localStorage.setItem("ESSEX","true")
+        location.href = "business.html"
+    })
+</script>

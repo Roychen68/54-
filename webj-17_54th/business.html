@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <style>
+    body{
+        display: flex;
+      }
+      div.card{
+       height: 600px;
+      }
+      div.card-box{
+        width: 1800px;
+        margin: auto;
+      }
+
+      .shake{
+        animation: 1s k;
+      }
+
+      @keyframes k{
+              10%, 90% {
+          transform: translate3d(-5px, 0, 0);
+        }
+
+        20%, 80% {
+          transform: translate3d(10px, 0, 0);
+        }
+    
+        30%, 50%{
+          transform: translate3d(-20px, 0, 0);
+        }
+    
+        40%, 60% {
+          transform: translate3d(20px, 0, 0);
+        }
+        80%{
+            transform: translate3d(30px,0,0);
+        }
+        70% , 90%{
+            transform: translate3d(-30px,0,0);
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="nav"></div>
+    <div class="card-box">
+        <div class="card-deck">
+        <div class="card" id="b">
+            <img src="./img/4c215670-aa54-11ee-a849-b49691e6ead0.jpg" alt="" class="card-img-top">
+            <h5 class="card-title">Essex - American Tier X Aircraft Carrier 1942</h5>
+            <p class="card-text">The first Essex-class aircraft carriers were ordered as part of the Navy's expansion program of 1938. The decision to construct more ships in the series was made after the Pacific war had broken out. The Essex-class aircraft carriers were significant for several reasons. They were large and fast; had strong air defenses; could carry and launch a large air group rapidly; and, importantly, they were available in substantial numbers. Through a combination of these qualities, they played a pivotal role in the U.S. Navy's achievements in the Pacific during the final 2 years of World War II.</p>
+        </div>
+        <div class="card" id="a">
+            <img src="./img/4c1dbe48-aa54-11ee-88c5-b49691e6ead0.jpg" alt="" class="card-img-top">
+            <h5 class="card-title">American Tier VI Aircraft Carrier 1943</h5>
+            <p class="card-text">Nine carriers of this class entered service in 1943, taking an active part in all U.S Navy operations in the Pacific during the last two years of the Second World War.</p>
+        </div>
+        <div class="card" id="c">
+            <img src="./img/4c1c224a-aa54-11ee-bd95-b49691e6ead0.jpg" alt="" class="card-img-top">
+            <h5 class="card-title">Yorktown - American Tier VIII Aircraft Carrier 1937</h5>
+            <p class="card-text">The Yorktown-class ships entered service between 1937 and 1941 as the first mass-produced aircraft carriers of special construction in the U.S. Navy. They were designed with the limitations of international naval armament agreements in mind, but despite this, the American designers skillfully crafted these 20,000-ton aircraft carriers to be swift, spacious, and well-equipped. During the initial year of the war in the Pacific, ships of the Yorktown class, along with the Lexington-class carriers, constituted the primary strike force of the U.S. Navy.</p>
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>
+<script src="./jquery.js"></script>
+<script>
+    $(".nav").load("header.html")
+    if (localStorage.getItem("INDEPENDENCE") == "true") {
+        document.getElementById("a").classList.add("shake")
+        localStorage.setItem("INDEPENDENCE","no")
+    }
+    if (localStorage.getItem("YORKTOWN") == "true") {
+        document.getElementById("b").classList.add("shake")
+        localStorage.setItem("YORKTOWN","no")
+    }
+    if (localStorage.getItem("ESSEX") == "true") {
+        document.getElementById("c").classList.add("shake")
+        localStorage.setItem("ESSEX","no")
+    }
+</script>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tickets</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <style>
+        body{
+            display: flex;
+        }
+        form.card{
+            margin: auto;
+            width: 700px;
+            height: 400px;
+        }
+        div.box{
+            width: 80%;
+            margin: auto;
+        }
+        label{
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav"></div>
+    </div>
+    <form method="post" action="#" class="card">
+        <div class="box">
+        <div class="input-group">
+            <label class="input-group-text" for="name"><b>First and last name</b></label>
+            <input type="text" class="form-control" id="first-name" name="first-name" required>
+            <input type="text" class="form-control" name="last-name" id="last-name" required>
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="phone" class="input-group-text"><b>Phone</b></label>
+            <input type="text" name="phone" id="phone" class="form-control" required>
+        </div><br>
+        <div class="input-group">
+            <label for="password" class="input-group-text"><b>password</b></label>
+            <input type="text" name="password" id="password" class="form-control" required>
+        </div><br>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <label for="veri" class="input-group-text"><b>Verifiaction:</b><b class="veri"></b></label>
+        </div>
+        <input type="text" name="veri" id="veri" class="form-control" required>
+        <div class="input-group-append">
+            <button class="btn btn-outline-info" type="button" id="refresh"><b>refresh</b></button>
+        </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" id="submit">submit</button>
+    </form>
+</body>
+</html>
+<script src="./jquery.js"></script>
+<script>
+    let ans
+    $(".nav").load("header.html")
+    $(document).ready(function () {
+        $.ajax({
+            type: 'GET',
+            url: 'veri.php',
+            dataType: 'text',
+            success: function (response) {
+                $(".veri").text(response)
+                ans=response
+            }
+        })
+    })
+    $("#refresh").click(function () {
+        $.ajax({
+            type: 'GET',
+            url: 'veri.php',
+            dataType: 'text',
+            success: function (response) {
+                $(".veri").text(response)
+                ans=response
+            }
+        })
+    });
+    $(document).ready(function () {
+    $('#submit').click(function () {
+        var veri = $("#veri").val();
+        if (ans == veri) {
+            var formData = {
+                firstName: $('#first-name').val(),
+                lastName: $('#last-name').val(),
+                phone: $('#phone').val(),
+                password: $("#password").val(),
+                veri: $('#veri').val()
+            };
+
+            if(formData["firstName"] == '' || formData["firstName"] == '' || formData["firstName"] == '' ||formData["firstName"] == '' ||formData["firstName"] == ''){
+                alert("please fill all the blank");
+            }else{
+            $.ajax({
+                type: 'POST',
+                url: 'tickets.php',
+                data: formData,
+                success: function (response) {
+                    console.log(response.responseText);
+                    location.href = "home.html";
+                    alert("success")
+                },
+                error: (e)=>{
+                    console.log(e)
+                    console.log("sss")
+                },
+            });
+            }
+            
+        }else{
+            alert("please the verifaction")
+        }
+    });
+    });
+</script>
